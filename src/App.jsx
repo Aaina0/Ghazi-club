@@ -3,22 +3,21 @@ import "./App.css";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Home from "./pages/home/Home";
-import NotFound from "./pages/notFound/NotFound";
-import Plans from "./pages/plans/Plans";
-import Trainer from "./pages/trainer/Trainer";
+import OurCoaching from "./pages/notFound/OurCoaching";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-
-      <Home />
-      <About />
-      <Contact />
-      <NotFound />
-      <Plans />
-      <Trainer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="/ourCoaching" element={<OurCoaching />} />
+      </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
